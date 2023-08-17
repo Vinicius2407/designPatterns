@@ -6,22 +6,30 @@
 # 5 - PlacaVideo
 
 class PlacaMae:
+    def __init__(self, boot):
+        self.boot = boot
+
     def on(self):
         print('Ligando a placa mãe')
     
 class Processador:
+    def __init__(self, profile):
+        self.profile = profile
+
     def on(self):
         print('Ligando o processador')
     
 class Memoria:
+    def __init__(self):
+        pass
     def on(self):
         print('memória ok')
 
 # Ligar o computador
 class ComputerFacade:
     def __init__(self):
-        self.processador = Processador()
-        self.placa = PlacaMae()
+        self.placa = PlacaMae("bootNormal")
+        self.processador = Processador(profile="dev")
         self.memoria = Memoria()
 
     def on(self):
